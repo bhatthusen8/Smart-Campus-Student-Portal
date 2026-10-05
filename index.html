@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Campus | Student Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">SC</div>
+
+        <div>
+            <strong>Smart</strong>
+            <span>Campus</span>
+        </div>
+    </div>
+
+    <nav>
+
+        <a href="#dashboard" class="nav-link active">
+            <span>⌂</span> Dashboard
+        </a>
+
+        <a href="#profile" class="nav-link">
+            <span>👤</span> My Profile
+        </a>
+
+        <a href="#subjects" class="nav-link">
+            <span>📚</span> Subjects
+        </a>
+
+        <a href="#timetable" class="nav-link">
+            <span>📅</span> Timetable
+        </a>
+
+        <a href="#attendance" class="nav-link">
+            <span>📊</span> Attendance
+        </a>
+
+        <a href="#results" class="nav-link">
+            <span>📈</span> Results
+        </a>
+
+        <a href="#assignments" class="nav-link">
+            <span>📝</span> Assignments
+        </a>
+
+        <a href="#notices" class="nav-link">
+            <span>📢</span> Notices
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button onclick="showSettings()">
+            ⚙️ Settings
+        </button>
+
+        <button onclick="logout()">
+            🚪 Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <button class="menu-btn" onclick="toggleSidebar()">
+            ☰
+        </button>
+
+        <div class="search-box">
+            🔍
+            <input
+                type="text"
+                id="search"
+                placeholder="Search anything..."
+                onkeyup="searchContent()"
+            >
+        </div>
+
+        <div class="top-actions">
+
+            <button class="notification" onclick="showNotifications()">
+                🔔
+                <span>3</span>
+            </button>
+
+            <div class="student-mini">
+
+                <div class="avatar">
+                    HB
+                </div>
+
+                <div>
+                    <strong>Husen Bhatt</strong>
+                    <small>B.Sc. Student</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboard" class="page-section">
+
+        <div class="welcome">
+
+            <div>
+
+                <p class="eyebrow">
+                    STUDENT PORTAL
+                </p>
+
+                <h1>
+                    Good Morning, Husen 👋
+                </h1>
+
+                <p>
+                    Here's what's happening with your academic journey today.
+                </p>
+
+            </div>
+
+            <button class="primary-btn" onclick="showSchedule()">
+                View Today's Schedule →
+            </button>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card blue">
+
+                <div class="stat-icon">📚</div>
+
+                <div>
+                    <span>Total Subjects</span>
+                    <strong>03</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card green">
+
+                <div class="stat-icon">📊</div>
+
+                <div>
+                    <span>Attendance</span>
+                    <strong>82%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card purple">
+
+                <div class="stat-icon">📈</div>
+
+                <div>
+                    <span>Current CGPA</span>
+                    <strong>8.2</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card orange">
+
+                <div class="stat-icon">📝</div>
+
+                <div>
+                    <span>Pending Tasks</span>
+                    <strong>04</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DASHBOARD GRID -->
+
+        <div class="dashboard-grid">
+
+            <!-- TODAY -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Today's Classes</h2>
+                        <p>Monday, 05 October 2026</p>
+                    </div>
+
+                    <button onclick="showAllClasses()">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="class-item">
+
+                    <div class="time">
+                        09:00
+                        <small>AM</small>
+                    </div>
+
+                    <div class="class-line blue-line"></div>
+
+                    <div class="class-info">
+
+                        <strong>Organic Chemistry</strong>
+
+                        <span>
+                            📍 Room 204 • Dr. Patel
+                        </span>
+
+                    </div>
+
+                    <span class="live">
+                        NOW
+                    </span>
+
+                </div>
+
+
+                <div class="class-item">
+
+                    <div class="time">
+                        11:00
+                        <small>AM</small>
+                    </div>
+
+                    <div class="class-line green-line"></div>
+
+                    <div class="class-info">
+
+                        <strong>Botany</strong>
+
+                        <span>
+                            📍 Lab 102 • Prof. Shah
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="class-item">
+
+                    <div class="time">
+                        02:00
+                        <small>PM</small>
+                    </div>
+
+                    <div class="class-line purple-line"></div>
+
+                    <div class="class-info">
+
+                        <strong>Physics</strong>
+
+                        <span>
+                            📍 Room 301 • Dr. Mehta
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTICES -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Latest Notices</h2>
+                        <p>Important college updates</p>
+                    </div>
+
+                    <button onclick="scrollToSection('notices')">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <div class="notice-icon red">
+                        📢
+                    </div>
+
+                    <div>
+                        <strong>Semester Examination</strong>
+                        <p>Exam form submission starts from 10 Oct.</p>
+                        <small>2 hours ago</small>
+                    </div>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <div class="notice-icon yellow">
+                        📅
+                    </div>
+
+                    <div>
+                        <strong>Holiday Notice</strong>
+                        <p>College will remain closed on Friday.</p>
+                        <small>Yesterday</small>
+                    </div>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <div class="notice-icon green">
+                        🎓
+                    </div>
+
+                    <div>
+                        <strong>Workshop</strong>
+                        <p>Career guidance workshop next week.</p>
+                        <small>2 days ago</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROFILE ================= -->
+
+    <section id="profile" class="page-section">
+
+        <div class="section-title">
+
+            <div>
+                <p class="eyebrow">STUDENT</p>
+                <h2>My Profile</h2>
+            </div>
+
+            <button class="primary-btn" onclick="editProfile()">
+                Edit Profile
+            </button>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-header">
+
+                <div class="big-avatar">
+                    HB
+                </div>
+
+                <div>
+                    <h2>Husen Bhatt</h2>
+                    <p>B.Sc. Chemistry • Semester 1</p>
+                    <span class="status">
+                        ● Active Student
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="profile-details">
+
+                <div>
+                    <label>Enrollment Number</label>
+                    <strong>SC202600123</strong>
+                </div>
+
+                <div>
+                    <label>Course</label>
+                    <strong>B.Sc. Chemistry</strong>
+                </div>
+
+                <div>
+                    <label>Major</label>
+                    <strong>Chemistry</strong>
+                </div>
+
+                <div>
+                    <label>Minor</label>
+                    <strong>Botany</strong>
+                </div>
+
+                <div>
+                    <label>Multidisciplinary</label>
+                    <strong>Physics</strong>
+                </div>
+
+                <div>
+                    <label>Email</label>
+                    <strong>student@example.com</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SUBJECTS ================= -->
+
+    <section id="subjects" class="page-section">
+
+        <div class="section-title">
+
+            <div>
+                <p class="eyebrow">ACADEMICS</p>
+                <h2>My Subjects</h2>
+            </div>
+
+        </div>
+
+
+        <div class="subject-grid">
+
+            <div class="subject-card chemistry">
+
+                <span class="subject-number">01</span>
+
+                <div class="subject-icon">
+                    ⚗️
+                </div>
+
+                <h3>Chemistry</h3>
+
+                <p>Major Subject</p>
+
+                <div class="subject-footer">
+                    <span>120 Hours</span>
+                    <strong>8 Credits</strong>
+                </div>
+
+            </div>
+
+
+            <div class="subject-card botany">
+
+                <span class="subject-number">02</span>
+
+                <div class="subject-icon">
+                    🌿
+                </div>
+
+                <h3>Botany</h3>
+
+                <p>Minor Subject</p>
+
+                <div class="subject-footer">
+                    <span>80 Hours</span>
+                    <strong>6 Credits</strong>
+                </div>
+
+            </div>
+
+
+            <div class="subject-card physics">
+
+                <span class="subject-number">03</span>
+
+                <div class="subject-icon">
+                    ⚛️
+                </div>
+
+                <h3>Physics</h3>
+
+                <p>Multidisciplinary</p>
+
+                <div class="subject-footer">
+                    <span>60 Hours</span>
+                    <strong>4 Credits</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TIMETABLE ================= -->
+
+    <section id="timetable" class="page-section">
+
+        <div class="section-title">
+
+            <div>
+                <p class="eyebrow">SCHEDULE</p>
+                <h2>Weekly Timetable</h2>
+            </div>
+
+            <button class="secondary-btn" onclick="printTimetable()">
+                🖨️ Print
+            </button>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>09:00 - 10:00</td>
+                        <td>Chemistry</td>
+                        <td>Physics</td>
+                        <td>Chemistry</td>
+                        <td>Botany</td>
+                        <td>Chemistry</td>
+                    </tr>
+
+                    <tr>
+                        <td>10:00 - 11:00</td>
+                        <td>Botany</td>
+                        <td>Chemistry</td>
+                        <td>Physics</td>
+                        <td>Chemistry</td>
+                        <td>Botany</td>
+                    </tr>
+
+                    <tr>
+                        <td>11:00 - 12:00</td>
+                        <td>Physics</td>
+                        <td>Botany</td>
+                        <td>Botany</td>
+                        <td>Physics</td>
+                        <td>Physics</td>
+                    </tr>
+
+                    <tr class="break-row">
+                        <td>12:00 - 01:00</td>
+                        <td colspan="5">LUNCH BREAK</td>
+                    </tr>
+
+                    <tr>
+                        <td>01:00 - 02:00</td>
+                        <td>Lab</td>
+                        <td>Chemistry</td>
+                        <td>Lab</td>
+                        <td>Botany</td>
+                        <td>Assignment</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ATTENDANCE ================= -->
+
+    <section id="attendance" class="page-section">
+
+        <div class="section-title">
+
+            <div>
+                <p class="eyebrow">ACADEMIC PERFORMANCE</p>
+                <h2>Attendance</h2>
+            </div>
+
+        </div>
+
+
+        <div class="attendance-grid">
+
+            <div class="attendance-card">
+
+                <div class="circle blue-circle">
+                    82%
+                </div>
+
+                <h3>Overall</h3>
+
+                <p>Good Attendance</p>
+
+            </div>
+
+
+            <div class="attendance-card">
+
+                <div class="circle green-circle">
+                    88%
+                </div>
+
+                <h3>Chemistry</h3>
+
+                <p>105 / 120 Classes</p>
+
+            </div>
+
+
+            <div class="attendance-card">
+
+                <div class="circle purple-circle">
+                    79%
+                </div>
+
+                <h3>Botany</h3>
+
+                <p>63 / 80 Classes</p>
+
+            </div>
+
+
+            <div class="attendance-card">
+
+                <div class="circle orange-circle">
+                    78%
+                </div>
+
+                <h3>Physics</h3>
+
+                <p>47 / 60 Classes</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESULTS ================= -->
+
+    <section id="results" class="page-section">
+
+        <div class="section-title">
+
+            <div>
+                <p class="eyebrow">ACADEMIC RESULTS</p>
+                <h2>Semester Results</h2>
+            </div>
+
+        </div>
+
+
+        <div class="result-summary">
+
+            <div>
+                <span>Current SGPA</span>
+                <strong>8.2</strong>
+            </div>
+
+            <div>
+                <span>Total Credits</span>
+                <strong>18</strong>
+            </div>
+
+            <div>
+                <span>Result Status</span>
+                <strong class="passed">PASSED</strong>
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Subject</th>
+                        <th>Internal</th>
+                        <th>External</th>
+                        <th>Total</th>
+                        <th>Grade</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Chemistry</td>
+                        <td>24</td>
+                        <td>58</td>
+                        <td>82</td>
+                        <td><span class="grade">A</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Botany</td>
+                        <td>22</td>
+                        <td>55</td>
+                        <td>77</td>
+                        <td><span class="grade">B+</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Physics</td>
+                        <td>23</td>
+                        <td>56</td>
+                        <td>79</td>
+                        <td><span class="grade">A</span></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ASSIGNMENTS ================= -->
+
+    <section id="assignments" class="page-section">
+
+        <div class="section-title">
+
+            <div>
+                <p class="eyebrow">TASKS</p>
+                <h2>Assignments</h2>
+            </div>
+
+            <button class="primary-btn" onclick="addAssignment()">
+                + Add Assignment
+            </button>
+
+        </div>
+
+
+        <div class="assignment-list">
+
+            <div class="assignment">
+
+                <div class="assignment-icon">⚗️</div>
+
+                <div class="assignment-info">
+
+                    <h3>Organic Chemistry Notes</h3>
+
+                    <p>Chemistry • Due 08 October 2026</p>
+
+                </div>
+
+                <span class="pending">
+                    Pending
+                </span>
+
+            </div>
+
+
+            <div class="assignment">
+
+                <div class="assignment-icon">🌿</div>
+
+                <div class="assignment-info">
+
+                    <h3>Plant Anatomy Report</h3>
+
+                    <p>Botany • Due 12 October 2026</p>
+
+                </div>
+
+                <span class="submitted">
+                    Submitted
+                </span>
+
+            </div>
+
+
+            <div class="assignment">
+
+                <div class="assignment-icon">⚛️</div>
+
+                <div class="assignment-info">
+
+                    <h3>Measurement Methods</h3>
+
+                    <p>Physics • Due 15 October 2026</p>
+
+                </div>
+
+                <span class="pending">
+                    Pending
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NOTICES ================= -->
+
+    <section id="notices" class="page-section">
+
+        <div class="section-title">
+
+            <div>
+                <p class="eyebrow">COLLEGE UPDATES</p>
+                <h2>Notices & Announcements</h2>
+            </div>
+
+        </div>
+
+
+        <div class="notice-list">
+
+            <div class="big-notice">
+
+                <div class="notice-date">
+                    <strong>05</strong>
+                    <span>OCT</span>
+                </div>
+
+                <div>
+
+                    <h3>Semester Examination Form</h3>
+
+                    <p>
+                        Students can submit their semester examination
+                        forms from 10 October 2026.
+                    </p>
+
+                    <small>
+                        Academic Department
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="big-notice">
+
+                <div class="notice-date">
+                    <strong>03</strong>
+                    <span>OCT</span>
+                </div>
+
+                <div>
+
+                    <h3>Career Guidance Workshop</h3>
+
+                    <p>
+                        A career guidance workshop will be organised
+                        next week in Seminar Hall.
+                    </p>
+
+                    <small>
+                        Student Development Cell
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="big-notice">
+
+                <div class="notice-date">
+                    <strong>01</strong>
+                    <span>OCT</span>
+                </div>
+
+                <div>
+
+                    <h3>College Holiday</h3>
+
+                    <p>
+                        College will remain closed on Friday.
+                    </p>
+
+                    <small>
+                        Administration
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+            SMART CAMPUS
+        </div>
+
+        <p>
+            A modern student portal for a smarter campus experience.
+        </p>
+
+        <div class="footer-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#results">Results</a>
+            <a href="#contact">Support</a>
+        </div>
+
+        <hr>
+
+        <p>
+            © 2026 Smart Campus. Student Portal.
+        </p>
+
+    </footer>
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
